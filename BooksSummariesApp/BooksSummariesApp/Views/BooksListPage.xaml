@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BooksSummariesApp.Views.BooksListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="إضافة" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout FlowDirection="RightToLeft">
+            <ListView x:Name="BooksListView"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                ItemSelected="BooksListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="5">
+                                <StackLayout Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="16" />
+                                        <Label Text="{Binding CreatedAt}" VerticalOptions="Center" FontSize="11"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding ShortDescription}" FontSize="13" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

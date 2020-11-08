@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BooksSummariesApp.Views.AddNewBookPage"
+             FlowDirection="RightToLeft">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15" FlowDirection="RightToLeft">
+            <Label Text="اسم الكتاب" FontSize="Medium" />
+            <Entry Text="{Binding Book.Title}" />
+
+            <Label Text="ملخص مختصر" FontSize="Medium" />
+            <Editor Text="{Binding Book.ShortDescription}" FontSize="Large" Margin="0" />
+
+            <Label Text="ملخص مفصل" FontSize="Medium" />
+            <Editor Text="{Binding Book.LongDescription}" FontSize="Large" Margin="0" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="إلغاء" 
+                        BackgroundColor="#ecf0f1" TextColor="#2c3e50"
+                        Clicked="Cancel_Clicked"
+                        HorizontalOptions="StartAndExpand"
+                        WidthRequest="160"/>
+                <Button Text="حفظ" 
+                        BackgroundColor="#16a085" TextColor="#ecf0f1" 
+                        Clicked="Save_Clicked" 
+                        HorizontalOptions="EndAndExpand"
+                        WidthRequest="160"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
